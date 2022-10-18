@@ -1,0 +1,336 @@
+section {
+    padding: rem(80) 0;
+    @include respond-to(lg) {
+        padding: rem(55) 0;
+    }
+    @include respond-to(sm) {
+        padding: rem(45) 0;
+    }
+    @include respond-to(xs) {
+        padding: rem(35) 0;
+    }
+
+    &.hero {
+        text-align: center;
+        position: relative;
+        .content-block {
+            margin-bottom: rem(50);
+            position: relative;
+            @include respond-to(xs) {
+                margin-bottom: 10px;
+            }
+            h1 {
+                color: $primary;
+                font-size: rem(100);
+                font-weight: 600;
+                @include respond-to(md) {
+                    font-size: rem(80);
+                }
+
+                @include respond-to(sm) {
+                    font-size: rem(60);
+                }
+
+                @include respond-to(xs) {
+                    font-size: rem(40);
+                }
+            }
+            h4 {
+                color: $secondary;
+                font-weight: 600;
+                &.sh-top {
+                    font-size: rem(18);
+                    @include respond-to(md) {
+                        font-size: rem(16);
+                    }
+
+                    @include respond-to(sm) {
+                        font-size: rem(16);
+                    }
+
+                    @include respond-to(xs) {
+                        font-size: rem(14);
+                    }
+                }
+
+                &.sh-btm {
+                    font-size: rem(20);
+                    @include respond-to(md) {
+                        font-size: rem(18);
+                    }
+
+                    @include respond-to(sm) {
+                        font-size: rem(18);
+                    }
+
+                    @include respond-to(xs) {
+                        font-size: rem(16);
+                    }
+                }
+            }
+        }
+
+        .action {
+            position: absolute;
+            right: 10%;
+            bottom: 30%;
+            width: 145px;
+            height: 145px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid $secondary;
+            border-radius: 100%;
+            transition: all 0.5s;
+            @include respond-to(md) {
+                transform: scale(0.8);
+                bottom: 23%;
+            }
+            @include respond-to(sm) {
+                transform: scale(0.6);
+                right: 8%;
+                bottom: 20%;
+            }
+
+            @include respond-to(xs) {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                transform: scale(0.5) rotate(45deg);
+                margin: 0 auto -60px;
+            }
+            img {
+                position: relative;
+                z-index: 1;
+            }
+            &:hover {
+                border-color: $primary;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-image: url(../../assets/images/learn-more.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                -webkit-animation: rotating 10s linear infinite;
+                -moz-animation: rotating 10s linear infinite;
+                -ms-animation: rotating 10s linear infinite;
+                -o-animation: rotating 10s linear infinite;
+                animation: rotating 10s linear infinite;
+            }
+        }
+    }
+
+    &.customer-logos {
+        text-align: center;
+        .logos-block {
+            padding: 20px;
+            background: #fff;
+            border-top: 1px solid $tertiary;
+            border-bottom: 1px solid $tertiary;
+            img {
+                max-width: 75%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &.about-us {
+        .img-block {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .content-block {
+            .content {
+                max-width: 550px;
+                span,
+                a {
+                    color: $secondary;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    &.strengths {
+        .strth-block {
+            padding: 25px 0;
+            background: #fff;
+            border-top: 1px solid $tertiary;
+
+            .content-wapper {
+                max-width: 1000px;
+                margin: 0 auto;
+
+                .content-block {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    height: 100%;
+                }
+
+                .img-block img {
+                    display: block;
+                    margin-right: auto;
+                    @include respond-to(xs) {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+
+            &:last-child {
+                border-bottom: 1px solid $tertiary;
+            }
+            &:nth-child(odd) {
+                .img-block img {
+                    display: block;
+                    margin-right: 0;
+                    margin-left: auto;
+                    @include respond-to(xs) {
+                        margin-right: auto;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.mission {
+        .content-block {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            max-width: 550px;
+            margin-left: auto;
+            .action {
+                display: table;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    &.contact-cta {
+        overflow: hidden;
+        .content-wapper {
+            padding: 60px;
+            background: #fff;
+            border: 1px solid #000;
+            border-radius: 25px;
+            position: relative;
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            &:before {
+                background-image: url(../../assets/images/contact-shape-1.png);
+                width: 441px;
+                height: 161px;
+                right: -140px;
+                top: -51px;
+                @include respond-to(lg) {
+                    width: 330px;
+                    height: 125px;
+                    right: -130px;
+                    top: -50px;
+                }
+                @include respond-to(md) {
+                    width: 345px;
+                    height: 115px;
+                }
+
+                @include respond-to(sm) {
+                    width: 300px;
+                    height: 110px;
+                    right: -120px;
+                    top: -30px;
+                }
+
+                @include respond-to(xs) {
+                    width: 209px;
+                    height: 70px;
+                    right: -75px;
+                    top: -25px;
+                }
+            }
+
+            &:after {
+                background-image: url(../../assets/images/contact-shape-2.png);
+                width: 438px;
+                height: 137px;
+                left: -152px;
+                bottom: -51px;
+                @include respond-to(lg) {
+                    width: 315px;
+                    height: 95px;
+                    left: -110px;
+                    bottom: -30px;
+                }
+
+                @include respond-to(md) {
+                    width: 345px;
+                    height: 115px;
+                }
+
+                @include respond-to(sm) {
+                    width: 300px;
+                    height: 90px;
+                    left: -135px;
+                    bottom: -35px;
+                }
+
+                @include respond-to(xs) {
+                    width: 230px;
+                    height: 70px;
+                    left: -80px;
+                    bottom: -25px;
+                }
+            }
+            .content-block {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                max-width: 420px;
+                margin: 0 auto;
+                .action {
+                    display: table;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

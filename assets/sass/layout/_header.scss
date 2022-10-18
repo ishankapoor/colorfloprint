@@ -1,0 +1,106 @@
+header {
+    .navbar {
+        .navbar-toggler-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 15px;
+                height: 15px;
+                fill: #fff;
+            }
+        }
+        .navbar-nav {
+            @include respond-to(xxl) {
+                border: 1px solid $tertiary;
+            }
+
+            @include respond-to(xl) {
+                border: 1px solid $tertiary;
+                padding: 5px;
+                border-radius: 10px;
+            }
+
+            @include respond-to(sm) {
+                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.05);
+                padding: 10px;
+                position: absolute;
+                z-index: 9999;
+                width: 90%;
+                background: #fff;
+                margin: 10px auto 0;
+                left: 0;
+                right: 0;
+            }
+
+            @include respond-to(xs) {
+                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.05);
+                padding: 10px;
+                position: absolute;
+                z-index: 9999;
+                width: 90%;
+                background: #fff;
+                margin: 10px auto 0;
+                left: 0;
+                right: 0;
+            }
+
+            .nav-item {
+                margin: 0 15px;
+                padding: 5px 15px;
+                position: relative;
+                @include respond-to(md) {
+                    margin: 0 10px;
+                    padding: 5px 9px;
+                }
+                @include respond-to(sm) {
+                    margin: 0;
+                    padding: 10px 0;
+                }
+                @include respond-to(xs) {
+                    margin: 0;
+                    padding: 10px 0;
+                }
+                &::after {
+                    content: "";
+                    width: 1px;
+                    height: 25px;
+                    background: $tertiary;
+                    position: absolute;
+                    top: 5px;
+                    right: -15px;
+                    @include respond-to(sm) {
+                        display: none;
+                    }
+
+                    @include respond-to(xs) {
+                        display: none;
+                    }
+                }
+
+                &:last-child:after {
+                    display: none;
+                }
+                .nav-link {
+                    color: $tertiary;
+                    padding: 0;
+                    &:hover,
+                    &.active {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+        .hd-btn {
+            display: flex;
+            @include respond-to(sm) {
+                display: none;
+            }
+
+            @include respond-to(xs) {
+                display: none;
+            }
+        }
+    }
+}
